@@ -25,7 +25,7 @@ def main():
     destination = config_home / "omarchy/plugins/max.pomodoro"
     if source != destination:
         shutil.copytree(source, destination, dirs_exist_ok=True,
-                        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+                        ignore=shutil.ignore_patterns(".git", "__pycache__", "*.pyc"))
     durations = config_home / "pomodoro/config.json"
     if not durations.exists():
         atomic_json(durations, {"work_minutes": 25, "break_minutes": 5})

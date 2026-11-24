@@ -2,10 +2,11 @@
   "schemaVersion": 1,
   "id": "max.pomodoro",
   "name": "Pomodoro",
-  "version": "1.0.0",
-  "author": "Max",
+  "version": "1.0.1",
+  "author": "Maximilyanus29",
+  "license": "MIT",
   "description": "Work and rest timer with manually started intervals",
   "kinds": ["service", "bar-widget"],
   "entryPoints": {"service": "Service.qml", "barWidget": "PomodoroWidget.qml"},
-  "barWidget": {"displayName": "Pomodoro", "description": "Work and rest timer", "category": "Productivity", "allowMultiple": false}
+  "barWidget": {"displayName": "Pomodoro", "description": "Work and rest timer", "category": "Productivity", "allowMultiple": false, "defaultSection": "centerBegin"}
 }

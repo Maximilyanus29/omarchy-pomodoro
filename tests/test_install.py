@@ -23,6 +23,7 @@ class InstallTests(unittest.TestCase):
             command = [sys.executable, str(PLUGIN / "install.py")]
             first = subprocess.run(command, env=env, capture_output=True, text=True, timeout=10)
             self.assertEqual(first.returncode, 0, first.stderr)
+            self.assertFalse((config / "omarchy/plugins/max.pomodoro/.git").exists())
             after = json.loads(shell.read_text())
             self.assertEqual(after["bar"]["layout"]["centerBegin"], [{"id": "old.widget"}, {"id": "max.pomodoro"}])
             self.assertEqual(after["bar"]["layout"]["center"], original["bar"]["layout"]["center"])

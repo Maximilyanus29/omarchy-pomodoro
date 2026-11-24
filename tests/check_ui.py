@@ -12,7 +12,7 @@ import time
 plugin = Path(__file__).resolve().parents[1]
 with tempfile.TemporaryDirectory(prefix="pomodoro-ui-") as temporary:
     root = Path(temporary)
-    shutil.copytree(plugin, root / "Plugin", ignore=shutil.ignore_patterns("__pycache__"))
+    shutil.copytree(plugin, root / "Plugin", ignore=shutil.ignore_patterns(".git", "__pycache__"))
     shutil.copy2(plugin / "tests/ui.qml", root / "shell.qml")
     for name in ("Commons", "Ui"):
         (root / name).symlink_to(Path("/usr/share/omarchy/shell") / name)
